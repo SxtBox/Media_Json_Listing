@@ -21,7 +21,7 @@ $VAR1 = $ROOT_URL . "";
 $VAR2 = "";
 
 // CONFIG
-$append_url = "?ref=albdroid_code_generator";
+$append_url = "?ref=albdroid"; // REPLACE
 $url_feeds["albdroid"] = "http://www.radiorecord.ru/rss.xml"; // RSS LINK
 $date_format = "l, jS \of F Y h:i:s A";
 // END CONFIG
