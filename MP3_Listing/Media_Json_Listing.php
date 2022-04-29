@@ -50,13 +50,19 @@ $rest_api = array();
 
 foreach (glob($config['path'] . "/*.mp3") as $filename)
 {
+
     $file_url = $config['url'] . '/' . basename($filename);
     $rest_api[$id]['id'] = $id;
-	$rest_api[$id]['title'] = basename($filename);
+    $rest_api[$id]['title'] = basename($filename);
     $rest_api[$id]['url'] = $file_url;
     $rest_api[$id]['size'] = readable_size(filesize($filename));
     $rest_api[$id]['id3'] = get_id3($filename);
     // $rest_api[$id]['debug'] = readable_size(memory_get_usage()); // debug
+    $rest_api[$id]['url'] = str_replace(
+    array(" "),
+    array("%20"),
+    $rest_api[$id]['url']
+    );
     $id++;
 }
 
